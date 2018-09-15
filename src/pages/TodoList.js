@@ -9,12 +9,13 @@
 
 import React, {Component} from 'react'
 import {inject, observer} from 'mobx-react'
+import { Switch, Route, Link} from 'react-router-dom'
 
 import Header from './Header'
+import Test from './Test'
 
 
 @inject('todoListModel')
-@inject('txtModel')
 @observer
 class TodoList extends Component {
   handleRm(index, e) {
@@ -53,11 +54,12 @@ class TodoList extends Component {
 
         <span>{this.props.todoListModel.countCheckedTxt}</span>
 
-        <div className={`testTxtModel`} style={{ margin: '20px' }}>
-          {/*{JSON.stringify()}*/}
-          <span style={{ margin: '0 20px 0 0' }}>{this.props.txtModel.txt}</span>
-          <button onClick={(e) => this.props.txtModel.changeTxt()}>点击我改变`{this.props.txtModel.txt}`的txt </button>
+
+        <div>
+          <Link to='/test'>点击我去`test`页面</Link>
         </div>
+
+      
 
       </div>
     )

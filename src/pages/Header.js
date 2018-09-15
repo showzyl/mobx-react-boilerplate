@@ -9,8 +9,8 @@
 
 import React, {Component} from 'react'
 
-import { observable, action } from "mobx";
-import { observer, inject } from "mobx-react";
+import { observable, action } from 'mobx'
+import { observer, inject } from 'mobx-react'
 
 
 @inject('todoListModel')
@@ -44,12 +44,12 @@ class Header extends Component {
 
   render() {
     return (
-      <div className="header">
+      <div className='header'>
         <input
           placeholder={`请添加 计划 `}
-          style={ {"border": "1px solid black"} }
+          style={ {'border': '1px solid black'} }
           value={this.txt}
-          type="text"
+          type='text'
           className={`header-input`}
           onChange={(e) => this.handleChange(e)}
           onKeyUp={(e) => this.onSubmitTxt(e)}
